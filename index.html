@@ -18,7 +18,7 @@
                 <li><a href="#storia" data-key="nav_storia">La Storia</a></li>
                 <li><a href="#menu" data-key="nav_menu">Il Menu</a></li>
                 <li><a href="#prenota" data-key="nav_prenota">Prenota</a></li>
-                <li><a href="#contatti">Contatti</a></li>
+                <li><a href="#contatti" data-key="nav_contatti">Contatti</a></li>
             </ul>
             <div class="dropdown">
                 <button class="dropbtn" id="dropdownToggle" aria-expanded="false" aria-controls="dropdownMenu"></button>
@@ -225,66 +225,70 @@
 
     <section id="prenota" class="reservation">
         <div class="reservation-container">
-            <h2>Prenota</h2>
-            <p>Termini e condizioni. L’invio dei dati del seguente modulo genera una richiesta di prenotazione. La conferma della prenotazione verrà recapitata al relativo indirizzo e-mail registrato nel modulo di richiesta.</p>
-            <p>La nostra risposta verrà inviata al più presto.</p>
-            <p>La richiesta di prenotazione viene presa in carico dal nostro staff entro il giorno prima altrimenti è necessario telefonare.</p>
-            <p>Per prenotazioni superiori a 7 persone è richiesto il pagamento di una caparra di 20 € a persona tramite “Pay by link”</p>
-            <p>L’importo verrà restituito in caso di disdetta pervenuta prima di 12 ore.</p>
+            <h2 data-key="prenota_title">Prenota</h2>
+
+            <p data-key="prenota_t1">Termini e condizioni...</p>
+            <p data-key="prenota_t2">La nostra risposta verrà inviata al più presto.</p>
+            <p data-key="prenota_t3">La richiesta di prenotazione...</p>
+            <p data-key="prenota_t4">Per prenotazioni superiori a 7 persone...</p>
+            <p data-key="prenota_t5">L’importo verrà restituito...</p>
 
             <form id="reservationForm">
-                <label for="name">Nome e cognome (obbligatorio)</label>
+                <label for="name" data-key="label_name">Nome e cognome (obbligatorio)</label>
                 <input type="text" id="name" name="name" required>
 
-                <label for="email">La tua email (obbligatorio)</label>
+                <label for="email" data-key="label_email">La tua email (obbligatorio)</label>
                 <input type="email" id="email" name="email" required>
 
-                <label for="phone">Numero di telefono (obbligatorio)</label>
+                <label for="phone" data-key="label_phone">Numero di telefono (obbligatorio)</label>
                 <input type="tel" id="phone" name="phone" required>
 
-                <label for="guests">Numero di persone (obbligatorio)</label>
+                <label for="guests" data-key="label_guests">Numero di persone (obbligatorio)</label>
                 <input type="number" id="guests" name="guests" min="1" required>
 
-                <label for="date">Data (obbligatorio)<br><small>È possibile prenotare fino a 36 giorni da oggi</small></label>
+                <label for="date" data-key="label_date">
+                    Data (obbligatorio)<br><small>È possibile prenotare fino a 36 giorni da oggi</small>
+                </label>
                 <input type="date" id="date" name="date" required>
 
-                <label for="time">Orario (obbligatorio)</label>
+                <label for="time" data-key="label_time">Orario (obbligatorio)</label>
                 <input type="time" id="time" name="time" required>
 
-                <label for="notes">Richieste particolari (facoltativo)</label>
+                <label for="notes" data-key="label_notes">Richieste particolari (facoltativo)</label>
                 <textarea id="notes" name="notes" rows="4"></textarea>
 
-                <button type="submit">Invia Richiesta</button>
+                <button type="submit" data-key="btn_send">Invia Richiesta</button>
             </form>
         </div>
     </section>
 
     <section id="contatti" class="contact">
         <div class="contact-container">
-            <h2>Orario e luogo</h2>
+            <h2 data-key="orario_title">Orario e luogo</h2>
 
             <div class="info-grid">
                 <div class="info-box">
-                    <h3>Orari</h3>
+                    <h3 data-key="orari_h3">Orari</h3>
                     <p>Lunedì–Sabato</p>
                     <p>12:30–15:00 / 19:30–23:00</p>
                     <p>Domenica chiuso</p>
                 </div>
 
                 <div class="info-box">
-                    <h3>Indirizzo</h3>
+                    <h3 data-key="indirizzo_h3">Indirizzo</h3>
                     <p>Via Borgognona 11, Roma</p>
                     <p><strong>Italia</strong></p>
                 </div>
 
                 <div class="info-box">
-                    <h3>Contatti</h3>
+                    <h3 data-key="contatti_h3">Contatti</h3>
                     <p><strong>Telefono:</strong> +39 06 6795676 – +39 06 6786752</p>
                     <p><strong>Email:</strong> contatti@ristorantenino.it</p>
                 </div>
             </div>
         </div>
     </section>
+
 
     <button id="scrollToTopBtn" title="Torna in alto">↑</button>
 
@@ -299,6 +303,7 @@
                 nav_storia: "La Storia",
                 nav_menu: "Il Menu",
                 nav_prenota: "Prenota",
+                nav_contatti: "Contatti",
                 hero_title: "Il Gusto della Tradizione a Roma",
                 hero_desc: "Dal 1946, l'autentica cucina toscana nel cuore della città.",
                 hero_btn: "Scopri il Menu",
@@ -424,6 +429,7 @@
                 nav_storia: "History",
                 nav_menu: "Menu",
                 nav_prenota: "Book a Table",
+                nav_contatti: "Contacts",
                 hero_title: "The Taste of Tradition in Rome",
                 hero_desc: "Since 1946, authentic Tuscan cuisine in the heart of the city.",
                 hero_btn: "View Menu",
@@ -525,7 +531,7 @@
                 sparkling_wines: "Sparkling Wines",
                 wine_10: "Franciacorta",
                 wine_11: "Prosecco",
-                prenota_title: "Book",
+                prenota_title: "Book a Table",
                 prenota_t1: "Terms and conditions. Sending the data in this form generates a booking request. The booking confirmation will be sent to the email address provided in the request form.",
                 prenota_t2: "Our reply will be sent as soon as possible.",
                 prenota_t3: "Booking requests are handled by our staff up to the day before; otherwise, please call us.",
@@ -549,6 +555,7 @@
                 nav_storia: "Historia",
                 nav_menu: "El Menú",
                 nav_prenota: "Reservar",
+                nav_contatti: "Contactos",
                 hero_title: "El Sabor de la Tradición en Roma",
                 hero_desc: "Desde 1946, auténtica cocina toscana en el corazón de la ciudad.",
                 hero_btn: "Ver el Menú",
@@ -674,6 +681,7 @@
                 nav_storia: "Histoire",
                 nav_menu: "Menu",
                 nav_prenota: "Réserver",
+                nav_contatti: "Contacts",
                 hero_title: "Le Goût de la Tradition à Rome",
                 hero_desc: "Depuis 1946, la cuisine toscane authentique au cœur de la ville.",
                 hero_btn: "Voir le Menu",
