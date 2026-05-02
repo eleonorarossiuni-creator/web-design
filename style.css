@@ -294,50 +294,59 @@ body.scrolled .sticky-side {
 /* mobile */
 @media (max-width: 768px) {
 
-    /* NASCONDI il bottone hamburger */
+    /* Navbar mobile: logo a sinistra, hamburger a destra */
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    /* Mostra SOLO il bottone hamburger */
     .nav-toggle {
-        display: none !important;
+        display: block !important;
+        margin-left: auto;
     }
 
-    /* MOSTRA i link come su desktop */
+    /* Nascondi i link finché non si apre il menu */
     .nav-links {
-        display: flex !important;
-        position: static !important;
-        flex-direction: row !important;
-        justify-content: space-around !important;
-        background: none !important;
-        padding: 0 !important;
-        border: none !important;
-        max-height: none !important;
-        overflow: visible !important;
+        display: none;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 70%;
+        height: 100vh;
+        background: var(--soft);
+        padding: 80px 20px;
+        border-left: 1px solid var(--leaf);
+        z-index: 2000;
     }
 
-    .nav-links li {
-        margin: 0 10px !important;
+    /* Quando si apre */
+    .nav-links.show {
+        display: flex;
     }
 
-    /* Dropdown identico al desktop */
+    /* Dropdown mobile */
     .dropdown-content {
-        position: absolute !important;
-        background: white !important;
-        border: 1px solid var(--leaf) !important;
-        box-shadow: 0 8px 16px rgba(0,0,0,0.2) !important;
-        padding: 12px !important;
-        width: 240px !important;
-        opacity: 0;
-        transform: translateY(-6px);
-        transition: opacity .25s ease, transform .25s ease;
+        position: static;
+        background: transparent;
+        box-shadow: none;
+        border: none;
+        padding: 0;
     }
 
-    .dropdown:hover .dropdown-content,
-    .dropdown:focus-within .dropdown-content {
-        opacity: 1;
-        transform: translateY(0);
-    }
-
-    /* Overlay disattivato */
+    /* Overlay scuro */
     .mobile-overlay {
-        display: none !important;
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(0,0,0,0.4);
+        z-index: 1500;
+    }
+
+    .mobile-overlay.show {
+        display: block;
     }
 }
 
