@@ -294,49 +294,52 @@ body.scrolled .sticky-side {
 /* mobile */
 @media (max-width: 768px) {
 
-    /* Navbar mobile: logo a sinistra, hamburger a destra */
-    .navbar {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+    /* 1) Nascondi il dropdown lingue sul telefono */
+    .dropdown {
+        display: none !important;
     }
 
-    /* Mostra SOLO il bottone hamburger */
+    /* 2) Mostra l’hamburger a destra */
     .nav-toggle {
         display: block !important;
         margin-left: auto;
+        font-size: 1.8rem;
+        background: none;
+        border: none;
+        cursor: pointer;
+        color: var(--deep);
     }
 
-    /* Nascondi i link finché non si apre il menu */
+    /* 3) Menu mobile che scorre da destra */
     .nav-links {
-        display: none;
-        flex-direction: column;
         position: fixed;
         top: 0;
         right: 0;
         width: 70%;
         height: 100vh;
         background: var(--soft);
-        padding: 80px 20px;
-        border-left: 1px solid var(--leaf);
+        flex-direction: column;
+        padding: 80px 20px 20px;
+        gap: 20px;
+        display: none;
         z-index: 2000;
+        border-left: 1px solid var(--leaf);
     }
 
-    /* Quando si apre */
     .nav-links.show {
         display: flex;
     }
 
-    /* Dropdown mobile */
-    .dropdown-content {
-        position: static;
-        background: transparent;
-        box-shadow: none;
-        border: none;
-        padding: 0;
+    /* 4) Lingue in fondo al menu mobile */
+    .lang-row {
+        margin-top: auto;
+        padding-top: 15px;
+        border-top: 1px solid var(--leaf);
+        display: flex;
+        gap: 10px;
     }
 
-    /* Overlay scuro */
+    /* 5) Overlay scuro */
     .mobile-overlay {
         display: none;
         position: fixed;
@@ -349,7 +352,6 @@ body.scrolled .sticky-side {
         display: block;
     }
 }
-
 
 
     
