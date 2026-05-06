@@ -884,6 +884,16 @@
             e.stopPropagation();
         });
 
+        // Sticky buttons scroll behavior
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 150) {
+                document.body.classList.add('scrolled');
+            } else {
+                document.body.classList.remove('scrolled');
+            }
+        });
+
+
     </script>
 </body>
 
